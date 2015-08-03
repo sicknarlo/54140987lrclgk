@@ -21,3 +21,13 @@ $ rake db:seed
 Check out `db/schema.rb`. You'll see that there are users, songs, playlists and a `playlist_selections` join table. Our seeds file has given you some users and songs.
 
 ####Your Mission
+You need to build out some of the Playlist model.
+
+Every playlist needs a unique name and an owner. Destroying a user should destroy their playlists. Destroying a playlist should remove the song associations.
+
+Create a NEW/EDIT form for a playlist. The user should be able to select an owner (User) from a drop down, and to select one or many songs via checkboxes.
+
+####A few notes
+
+- Don't worry about styling!
+- There is a very rudimentary index page that you can redirect to after a new playlist page.
