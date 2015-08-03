@@ -11,7 +11,7 @@ Song.destroy_all
 Playlist.destroy_all
 PlaylistSelection.destroy_all
 
-10.times do
+9.times do
   u = User.new
   u.name = Faker::Name.name
   u.email = Faker::Internet.email(u.name)
@@ -38,4 +38,5 @@ p.save
 t = Song.find_by_name "TikTok"
 b = Song.find_by_name "Blah Blah Blah"
 
-PlaylistSelection.create([{playlist_id: p.id, song_id: t.id}, {playlist_id: p.id, song_id: b.id}])
+PlaylistSelection.create([{playlist_id: p.id, song_id: t.id},
+                          {playlist_id: p.id, song_id: b.id}])

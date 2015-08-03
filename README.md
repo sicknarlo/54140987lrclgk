@@ -8,6 +8,8 @@ Answer [these qustions via Google Forms](https://docs.google.com/forms/d/1XVf9Z9
 
 ###2. Playlister, the App
 
+As a personal DJ to the stars, you need an app to create playlists for the users on your site.
+
 ####Setup
 Go to the `playlister` directory and set this app up:
 
@@ -18,16 +20,16 @@ $ rake db:migrate
 $ rake db:seed
 ```
 
-Check out `db/schema.rb`. You'll see that there are users, songs, playlists and a `playlist_selections` join table. Our seeds file has given you some users and songs.
+Check out `db/schema.rb`. You'll see that there are users, songs, playlists and a `playlist_selections` join table. Our seeds file has given you some users and songs, and one playlist to start you off.
 
 ####Your Mission
-You need to build out some of the Playlist model.
 
-Every playlist needs a unique name and an owner. Destroying a user should destroy their playlists. Destroying a playlist should remove the song associations.
+1. Debug the root page, which is `playlist#index`. The view itself doesn't need to be changed. Follow the errors and get it to load properly.
 
-Create a NEW/EDIT form for a playlist. The user should be able to select an owner (User) from a drop down, and to select one or many songs via checkboxes.
+2. Create a NEW form for a playlist. You should be able to select an owner (User) from a drop down, and to select one or many songs via checkboxes.
 
-####A few notes
+3. Include the `new` and `create` controller actions. You do not need to write `edit` or `update` but the form should be reusable for EDIT.
 
-- Don't worry about styling!
-- There is a very rudimentary index page that you can redirect to after a new playlist page.
+4. Make sure your associations are complete. Every playlist needs a unique name and an owner. Destroying a user should destroy their playlists. Destroying a playlist should remove the song associations.
+
+**Don't worry about styling!** It's going to be ugly, and that's okay.

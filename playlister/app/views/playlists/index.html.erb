@@ -1,0 +1,19 @@
+<h1>Playlists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Owner</th>
+    <th>Num. of Songs</th>
+  </tr>
+
+  <% @playlists.each do |playlist| %>
+    <tr>
+      <td><%= playlist.name %></td>
+      <td><%= playlist.user.name %></td>
+      <td><%= playlist.songs.count %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Create a new playlist!", new_playlist_path %>
