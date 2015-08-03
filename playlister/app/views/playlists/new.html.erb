@@ -1,0 +1,21 @@
+<%= form_for @playlist do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= collection_select(:playlist,
+                      :user_id,
+                      User.all,
+                      :id,
+                      :name
+                      ) %>
+<br>
+<%= collection_check_boxes(
+                            :playlist,     # Our instance variable is @post
+                            :song_ids,  # Run @post.tag_ids to get current tag ids
+                            Song.all,   # The collection of possible tags
+                            :id,       # Run `id` on each tag to see if it's in the association
+                            :name      # Run `name` on each tag to get its text
+                          ) %>
+<br>
+<%= f.submit %>
+<% end %>
